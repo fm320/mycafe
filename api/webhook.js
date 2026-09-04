@@ -93,7 +93,7 @@ module.exports = async function handler(req, res) {
         const replyText = processWhatsappMessage(userText, INITIAL_MENU_ITEMS, INITIAL_CAFE_CONFIG, INITIAL_ORDERS);
 
         const phoneId = process.env.PHONE_NUMBER_ID || '1209059535633267';
-        const metaToken = process.env.META_ACCESS_TOKEN || req.headers['x-meta-token'];
+        const metaToken = process.env.META_ACCESS_TOKEN || 'EAAc57YxZCEk4BSYHeDF37vzTS6mxp8YZCuKgDFSlBqoPlI6zYjCe9iyXSuCOJYZCb3CcfGmaNrWhstGXn4VKUATgjz9AX7Tm0HKLeAX57kfuPA3nNseT5uVdnQDZABZC89mJuU3ZCStiJ5TFa8TrAAXGdSyOCR3Ql06lseCTzv59o15O0vL5tPY2ZBN8jOZAG2vPDUZArh8svdtzhBSQJM06DfliqwYls9ufKWUA2vuSMcXD95qrxxjCSJNiHBX2RPCZAeaMdNArj19DZA6dGAZBmkZBf';
 
         if (metaToken) {
           await fetch(`https://graph.facebook.com/v20.0/${phoneId}/messages`, {
